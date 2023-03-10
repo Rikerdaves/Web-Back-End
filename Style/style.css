@@ -5,6 +5,7 @@ h1 {
     padding-top: 100px;
     padding-bottom: 50px;
 }
+
 p{
     font-size: larger;
     color: #ff2f2f;
@@ -12,7 +13,7 @@ p{
 }
 
 body{
-    background-image: url('https://img.freepik.com/free-vector/abstract-banner-background-with-red-shapes_1361-3348.jpg?w=1800&t=st=1678343776~exp=1678344376~hmac=8147ec67db3ce0fadb90cda1e46c120f1db2a5f2b1ed835a86948e5fe34c14ae');
+    background-image: url("https://img.freepik.com/free-vector/abstract-banner-background-with-red-shapes_1361-3348.jpg?w=1800&t=st=1678456776~exp=1678457376~hmac=ec711ca3f8cf5f6c498bad5ed85253081efcfc942ae41393949cc7b3850f2726");
 	background-size: cover;
 	background-repeat: no-repeat;
 
@@ -87,4 +88,25 @@ input:hover {
 select:hover {
 	background-color: #941414;
 	color: white;
-}  
+}
+
+#list-content{
+	background-color: #0c0c0c83;
+	border: 2px solid #ff1b1b;
+	max-width: 350px;
+	margin:  0 auto;
+	padding: 0 auto;
+	margin-bottom: 30px;
+}
+
+ul{
+	font-size: larger;
+    color: #f94343;
+	list-style: none;
+	
+}
+
+li{
+	margin-top: 10px;
+}
+
