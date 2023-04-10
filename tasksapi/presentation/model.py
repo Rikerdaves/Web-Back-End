@@ -2,11 +2,12 @@ from pydantic import BaseModel
 from bson.objectid import ObjectId
 
 class Document(BaseModel):
+    id : int | None | str
     descricao: str | None
     responsavel: str | None
     nivel: int 
     prioridade: int
-    situacao: str | None
+    situacao: str 
 
     class Config:
         orm_mode = True
@@ -23,10 +24,11 @@ class Document(BaseModel):
 
     def toDict(self):
         return {
-            "nome": self.nome,
-            "genero": self.genero,
-            "duracao": self.duracao,
-            "ano": self.ano
+            "descricao": self.descricao,
+            "responsavel": self.responsavel,
+            "nivel": self.nivel,
+            "prioridade": self.prioridade,
+            "situacao": self.situacao
         }
 
 
@@ -36,7 +38,7 @@ class User(BaseModel):
     responsavel: str
     nivel: int
     prioridade: int
-    situacao: str | None
+    situacao: str 
 
 
 

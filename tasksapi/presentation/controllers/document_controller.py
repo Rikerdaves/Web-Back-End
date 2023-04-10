@@ -25,7 +25,7 @@ def get_one(document_id: int | str):
     # fail fast
     if not document:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f'Não há filme com id = {document_id }')
+                            detail=f'Not found item with id = {document_id }')
 
     return document
 
@@ -41,17 +41,14 @@ def delete(document_id: int | str):
 
     if not document:
         raise HTTPException(status.HTTP_404_NOT_FOUND,
-                            detail="Filme não encontrado")
+                            detail="Not Found")
 
     document_repository.remover(document_id)
 
 
-@routes.put('/{document_id}')
+@routes.put('/{document_id}', status_code=status.HTTP_200_OK)
 def update(document_id: int | str, document: Document):
-    document_find = document_repository.get_one(document_id)
+    document_repository.get_one(document_id)
 
-    if not document_find:
-        raise HTTPException(status.HTTP_404_NOT_FOUND,
-                            detail="Filme não encontrado")
+    return document_repository.update(document_id, document)
 
-    return document_repository.atualizar(document_id, document)

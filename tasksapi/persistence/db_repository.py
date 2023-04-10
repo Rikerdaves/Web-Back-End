@@ -1,4 +1,5 @@
 from typing import TypedDict
+
 from bson.objectid import ObjectId
 from pymongo import MongoClient
 
