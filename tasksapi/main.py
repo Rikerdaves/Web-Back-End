@@ -1,39 +1,22 @@
-from persistence.crud import create_document, read_document, update_document, delete_document
-from persistence.model import Document
-from fastapi import FastAPI, HTTPException
-from bson import ObjectId
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from presentation.controllers import document_controller, user_controller
 
 app = FastAPI()
 
-@app.post("/documents/")
-def create_document_handler(document: Document):
-    document_dict = document.dict()
-    document_id = create_document("documents", document_dict)
-    return {"document_id": document_id}
+origins = ['http://localhost:5500',
+           'http://127.0.0.1:5500',
+           'https://127.0.0.1:8000']
 
-@app.get("/documents/")
-def read_documents():
-    documents = read_document("documents")
-    result = []
-    for doc in documents:
-        doc["_id"] = str(doc["_id"])
-        result.append(doc)
-    return result
+app.add_middleware(CORSMiddleware,
+                   allow_origins=origins,
+                   allow_credentials=True,
+                   allow_methods=['*'],
+                   allow_headers=['*'])
 
-@app.put("/documents/{document_id}")
-def update_document(document_id: str, document: Document):
-    document_dict = document.dict()
-    filter = {"_id": ObjectId(document_id)}
-    update = {"$set": document_dict}
-    modified_count = update_document("documents", filter, update)
-    if modified_count == 0:
-        raise HTTPException(status_code=404, detail="Document not found")
-    return {"document_id": document_id}
-
-@app.delete("/documents/{document_id}")
-def delete_document(document_id: str):
-    filter = {"_id": ObjectId(document_id)}
-    deleted_count = delete_document("documents", filter)
-    if deleted_count == 0:
-        raise HTTPException(status_code=404, detail="Document not found")
-    return {"document_id": document_id}
+# Rotas e Controllers
+app.include_router(document_controller.routes,
+                   prefix=document_controller.prefix)
+app.include_router(user_controller.routes,
+                   prefix=user_controller.prefix)
