@@ -1,8 +1,0 @@
-services:
-- name: web
-  env:
-    MONGODB_URI: mongodb+srv://ladydmc:devilmaycry5@apiserver.lcs3qz2.mongodb.net/?retryWrites=true&w=majority
-    MONGODB_DATABASE: apiserver
-    MONGODB_COLLECTION: documents
-  buildCommand: pip install -r requirements.txt
-  startCommand: uvicorn main:app --host 0.0.0.0 --port 8000
