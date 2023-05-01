@@ -7,7 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="Style/style.css">
-	<script defer src="Scripts/script.js"></script>
+	<script defer src="Scripts/api-script.js"></script>
+	<script defer src="Scripts/scripts.js"></script>
 </head>
 
 <body>
@@ -16,13 +17,13 @@
 	<p>Insira os dados abaixo:</p>
 	<form id="form-task">
 		<label for="descricao">Descrição:</label>
-		<input type="text" id="descricao" name="descricao" placeholder="Descrição da tarefa" required>
+		<input type="text" id="descricao" name="descricao" placeholder="Descrição da tarefa">
 
 		<label for="resposavel">Responsavel:</label>
-		<input type="text" id="responsavel" name="responsavel" placeholder="Nome do responsável" required>
+		<input type="text" id="responsavel" name="responsavel" placeholder="Nome do responsável">
 
 		<label for="nivel">Nivel:</label>
-		<select id="nivel" name="nivel" type="number" required>
+		<select id="nivel" name="nivel" type="number">
 			<option value="">Escolha uma opção</option>
 			<option value="1">1</option>
 			<option value="3">3</option>
@@ -31,7 +32,7 @@
 		</select>
 
 		<label for="prioridade">Prioridade:</label>
-		<select id="prioridade" name="prioridade" type="number" required>
+		<select id="prioridade" name="prioridade" type="number">
 			<option value="">Escolha uma opção</option>
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -39,7 +40,7 @@
 		</select>
 
 		<label for="situacao">Situação:</label>
-		<select id="situacao" name="situacao" type="text" required>
+		<select id="situacao" name="situacao" type="text">
 			<option value="">Escolha uma opção</option>
 			<option value="Nova">Nova</option>
 			<option value="Em Andamento">Em Andamento</option>
@@ -51,14 +52,20 @@
 		<br />
 
 		<input id="Enviar" type="submit" value="Enviar">
+		<input id="btn-div" type="button" value="Mostrar Tarefas">
+		
 	</form>
 
 
-	<h1 id="title">Tarefas Cadastradas</h1>
+	<div class="container">
+		<h1 id="title">Tarefas Cadastradas</h1>
 
-	<div id="list-content">
-		<ul id="list"></ul>
+		<div id="list-content">
+			<ul id="list"></ul>
+		</div>
 	</div>
+
+	
 
 
 </body>

@@ -2,11 +2,9 @@ from fastapi import APIRouter, HTTPException, status
 
 from persistence.db_repository import DocumentMongoDBRepository
 
-
-
 from ..model import Document
 
-print('Controller ✅')
+print('Controller OK✅')
 routes = APIRouter()
 prefix = '/document'
 

@@ -2,8 +2,8 @@ h1 {
     font-family: system-ui;
 	text-align: center;
     color: #ff3737;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 p{
@@ -16,7 +16,6 @@ body{
     background-image: url("https://img.freepik.com/free-vector/abstract-banner-background-with-red-shapes_1361-3348.jpg?w=1800&t=st=1678456776~exp=1678457376~hmac=ec711ca3f8cf5f6c498bad5ed85253081efcfc942ae41393949cc7b3850f2726");
 	background-size: cover;
 	background-repeat: no-repeat;
-
     padding:0;
     margin:0;
 }
@@ -25,7 +24,8 @@ form {
     font-family: 'apple-system';
 	max-width: 500px;
 	margin: 0 auto;
-	padding: 40px;
+	padding: 50px;
+	margin-bottom: 35px;
     padding-left: auto;
     padding-right: auto;
 	border: 2px solid #ff1b1b;
@@ -43,13 +43,12 @@ label {
 input[type="text"],
 input[type="integer"],
 select {
-	width: 100%;
+	width: 85%;
 	padding: 10px;
 	margin-bottom: 20px;
 	border: 2px solid #a40505b4;
 	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 0.668);
-	
 }
 
 select{
@@ -71,14 +70,13 @@ input[type="submit"] {
 	background-color: #941414bf;
 	font-family: -apple-system;
 	color: rgba(255, 255, 255, 0.704);
-	padding: 10px 20px;
+	padding: 10px 5px;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
 	font-size: larger;
 	transition-duration: 0.4s;
 }
-	
   
 input:hover {
 	background-color: #dd0000b9;
@@ -108,5 +106,29 @@ ul{
 
 li{
 	margin-top: 10px;
+	margin-right: 25px;
 }
+
+.container {
+    display: none;
+}
+
+#btn-div{
+	background-color: #941414bf;
+	font-family: -apple-system;
+	color: rgba(255, 255, 255, 0.704);
+	padding: 10px 5px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: larger;
+	transition-duration: 0.4s;
+	margin-left: 5px;
+
+}
+
+#btn-div:hover {
+	background-color: #dd0000b9;
+	color: white;
+  }
 
