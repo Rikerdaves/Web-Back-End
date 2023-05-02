@@ -1,4 +1,4 @@
-const baseUrl = 'http://127.0.0.1:8000/document/';
+const baseUrl = 'https://tarefasapi-u4ir.onrender.com/document/';
 
 let Works = [];
 
