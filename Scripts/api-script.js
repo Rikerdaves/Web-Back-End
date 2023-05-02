@@ -14,7 +14,7 @@ document.getElementById("form-task").addEventListener("submit", function(event) 
 
   
     // Envia os dados para a lista no FastAPI usando uma solicitação HTTP POST
-    fetch(baseUrl, {
+    fetch(baseUrl, { mode: 'cors' },{
       method: "POST",
       body: JSON.stringify({ descricao, responsavel, nivel, prioridade, situacao }),
       headers: {
