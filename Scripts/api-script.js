@@ -53,7 +53,7 @@ function atualizar_tela(){
 
 async function carregar_tarefas(){
   console.log('Lista - Todos as Tarefas OK')
-  const response = await fetch(baseUrl)
+  const response = await fetch(baseUrl, { mode: 'cors' })
 
   const status = response.status
   Works = await response.json()
@@ -65,11 +65,6 @@ async function atualizar_tarefa(){
   console.log('Atualizar - Tarefa atualizada OK')
   
 }
-
-fetch('https://tarefasapi-u4ir.onrender.com/document/', { mode: 'cors' })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
 
 console.log('API Tarefas iniciada!');
 carregar_tarefas();
