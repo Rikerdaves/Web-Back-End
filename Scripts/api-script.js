@@ -66,5 +66,10 @@ async function atualizar_tarefa(){
   
 }
 
+fetch('https://tarefasapi-u4ir.onrender.com/document/', { mode: 'cors' })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
 console.log('API Tarefas iniciada!');
 carregar_tarefas();
