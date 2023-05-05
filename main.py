@@ -4,6 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from presentation.controllers import document_controller, user_controller
 from presentation.log_middleware import LogMiddleware
 
+import uvicorn
+
 app = FastAPI()
 
 origins = ['http://localhost:5500',
@@ -25,3 +27,6 @@ app.include_router(document_controller.routes,
                    prefix=document_controller.prefix)
 app.include_router(user_controller.routes,
                    prefix=user_controller.prefix)
+
+if __name__ == '__main__':
+    app = application = uvicorn.run(app.app, host='0.0.0.0', port=8000)
