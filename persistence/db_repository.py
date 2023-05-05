@@ -16,7 +16,9 @@ class DocumentMongo(TypedDict):
 
 class DocumentMongoDBRepository():
     def __init__(self):
-        client = MongoClient("mongodb+srv://ladydmc:devilmaycry5@apiserver.lcs3qz2.mongodb.net/?retryWrites=true&w=majority")
+        client = MongoClient("mongodb+srv://ladydmc:devilmaycry5@apiserver.lcs3qz2.mongodb.net/?retryWrites=true&w=majority",
+                                 connectTimeoutMS=300,
+                                serverSelectionTimeoutMS=300)
         db = client["apiserver"]
         self.document = db["documents"]
         try:
