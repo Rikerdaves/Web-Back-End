@@ -5,8 +5,10 @@ WORKDIR /app
 COPY . .
 
 RUN set -eux; \
-    python -m pip install --upgrade pip; \
-    python -m pip install -r requirements.txt 
+    python -m pip install --upgrade pip
+
+RUN set -eux; \
+    python -m pip install -r requirements.txt
 
 EXPOSE 8000
 
