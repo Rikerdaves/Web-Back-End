@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     #DRF
     'rest_framework',
     
+    'corsheaders',
+    
     # Simples JWT
     'rest_framework_simplejwt',
 
