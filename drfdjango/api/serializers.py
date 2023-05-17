@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from api.models import Tarefas
 
 class TarefasSerializer(ModelSerializer):
+    usuario = serializers.ReadOnlyField(source='usuario.username')
 
     class Meta:
         model = Tarefas

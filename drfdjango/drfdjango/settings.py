@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 from decouple import config
 
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-05w+)dvzc=&pli5muz$qcq(60w6&%u07__ei4rwzvk1j589hrm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(config('DEBUG'))
 
-ALLOWED_HOSTS = [*config('ALLOWED_HOSTS').split(';')]
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     #DRF
     'rest_framework',
     
@@ -47,6 +49,11 @@ INSTALLED_APPS = [
     #Hello
     'api',
 ]
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),  # Defina a duração do token conforme necessário
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
