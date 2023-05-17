@@ -4,11 +4,9 @@ WORKDIR /app
 
 COPY . .
 
-RUN set -eux; \
-    python -m pip install --upgrade pip
+RUN apt-get update && apt-get install -y libpq-dev
 
-RUN set -eux; \
-    python -m pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
